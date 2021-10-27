@@ -11,7 +11,10 @@ import exportingModule from 'highcharts/modules/exporting';
 import indicators from 'highcharts/indicators/indicators';
 import ema from 'highcharts/indicators/ema';
 import apo from 'highcharts/indicators/apo';
-
+import AnnotationsFactory from "highcharts/modules/annotations";
+import stockTools from "highcharts/modules/stock-tools";
+AnnotationsFactory(Highcharts);
+stockTools(Highcharts)
 dataModule(Highcharts);
 exportingModule(Highcharts);
 indicators(Highcharts);
@@ -406,109 +409,8 @@ fetch('https://demo-live-data.highcharts.com/aapl-ohlcv.json')
             </span>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12 grid-margin stretch-card">
-            <div className="card corona-gradient-card">
-              <div className="card-body py-0 px-0 px-sm-3">
-                <div className="row align-items-center">
-                  <div className="col-4 col-sm-3 col-xl-2">
-                    <img src={require('../../assets/images/dashboard/Group126@2x.png')} className="gradient-corona-img img-fluid" alt="banner" />
-                  </div>
-                  <div className="col-5 col-sm-7 col-xl-8 p-0">
-                    <h4 className="mb-1 mb-sm-0">New refreshing look</h4>
-                    <p className="mb-0 font-weight-normal d-none d-sm-block">Corona admin template now with a new facelift for enhanced legibility and aesthetics!</p>
-                  </div>
-                  <div className="col-3 col-sm-2 col-xl-2 pl-0 text-center">
-                    <button className="btn btn-outline-light btn-rounded get-started-btn">Get Started</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$12.34</h3>
-                      <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-success ">
-                      <span className="mdi mdi-arrow-top-right icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Potential growth</h6>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$17.34</h3>
-                      <p className="text-success ml-2 mb-0 font-weight-medium">+11%</p>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-success">
-                      <span className="mdi mdi-arrow-top-right icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Revenue current</h6>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$12.34</h3>
-                      <p className="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-danger">
-                      <span className="mdi mdi-arrow-bottom-left icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Daily Income</h6>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-sm-6 grid-margin stretch-card">
-            <div className="card">
-              <div className="card-body">
-                <div className="row">
-                  <div className="col-9">
-                    <div className="d-flex align-items-center align-self-start">
-                      <h3 className="mb-0">$31.53</h3>
-                      <p className="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
-                    </div>
-                  </div>
-                  <div className="col-3">
-                    <div className="icon icon-box-success ">
-                      <span className="mdi mdi-arrow-top-right icon-item"></span>
-                    </div>
-                  </div>
-                </div>
-                <h6 className="text-muted font-weight-normal">Expense current</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row d-flex justify-content-around mb-4">
+        
+      <div className="row d-flex justify-content-around mb-4">
         <HighchartsReact
           highcharts={Highcharts}
           options={chartOptions}
